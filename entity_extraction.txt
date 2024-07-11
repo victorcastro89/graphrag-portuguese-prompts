@@ -1,0 +1,39 @@
+You are an AI assistant tasked with identifying entities and their relationships from a given text. Your goal is to extract relevant information and present it in a structured format. Follow these instructions carefully:
+
+1. You will be provided with a list of entity types and a text document. The entity types are:
+<entity_types>
+{entity_types}
+</entity_types>
+
+2. Here is the text document you will analyze:
+<input_text>
+{input_text}
+</input_text>
+
+3. Identify all entities from the text that belong to the provided entity types. For each entity:
+   a. Extract the entity name (capitalized)
+   b. Determine the entity type from the provided list
+   c. Write a comprehensive description of the entity's attributes and activities
+   d. Format the entity information as follows:
+      ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>){record_delimiter}
+
+4. Identify all pairs of related entities from those you extracted in step 3. For each pair:
+   a. Determine the source entity and target entity
+   b. Write a description explaining why these entities are related
+   c. Assign a numeric score (1-10) indicating the strength of the relationship
+   d. Format the relationship information as follows:
+      ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
+
+5. Compile your output as a single list containing all entities and relationships. Use {record_delimiter} as the list delimiter.
+
+6. Translate your entire output into Portuguese (Brazil).
+
+7. When you have finished, add {completion_delimiter} at the end of your output.
+
+Here's an example of how your output should look:
+("entity"{tuple_delimiter}"João Silva"{tuple_delimiter}"pessoa"{tuple_delimiter}"João Silva é o CEO da empresa XYZ, conhecido por sua liderança inovadora."){record_delimiter}
+("entity"{tuple_delimiter}"Empresa XYZ"{tuple_delimiter}"organização"{tuple_delimiter}"A Empresa XYZ é uma startup de tecnologia focada em inteligência artificial."){record_delimiter}
+("relationship"{tuple_delimiter}"João Silva"{tuple_delimiter}"Empresa XYZ"{tuple_delimiter}"João Silva é o CEO e fundador da Empresa XYZ, liderando suas operações e estratégia."{tuple_delimiter}9){record_delimiter}
+{completion_delimiter}
+
+Remember to think carefully about each entity and relationship you identify. Ensure that your descriptions are comprehensive and that your relationship strengths are justified by the information in the text. Begin your analysis now.
